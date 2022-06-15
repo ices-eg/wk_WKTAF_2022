@@ -4,6 +4,7 @@
 ## After:
 
 library(icesTAF)
+library(stockassessment)
 
 mkdir("data")
 
@@ -11,9 +12,30 @@ mkdir("data")
 
 catage <- read.ices(taf.data.path("sam_data/cn.dat"))
 
+#  ## Catch-weight-at-age ##
+wcatch <- read.ices(taf.data.path("sam_data/cw.dat"))
+wdiscards <- read.ices(taf.data.path("sam_data/cn.dat"))
+wlandings <- read.ices(taf.data.path("sam_data/lw.dat"))
+
+#  ## Natural-mortality ##
+natmort <- read.ices(taf.data.path("sam_data/nm.dat"))
+
+#  ## Proportion of F before spawning ##
+propf <- read.ices(taf.data.path("sam_data/pf.dat"))
+
+#  ## Proportion of M before spawning ##
+propm <- read.ices(taf.data.path("sam_data/pm.dat"))
+
+#  ## Stock-weight-at-age ##
+wstock <- read.ices(taf.data.path("sam_data/sw.dat"))
+
+# Landing fraction in catch at age
+landfrac <- read.ices(taf.data.path("sam_data/lf.dat"))
+
 
 
 
 ## 2 Preprocess data
 
 ## 3 Write TAF tables to data directory
+write.taf(catage, dir = "data")
