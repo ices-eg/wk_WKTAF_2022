@@ -14,7 +14,7 @@ catage <- read.ices(taf.data.path("sam_data/cn.dat"))
 
 #  ## Catch-weight-at-age ##
 wcatch <- read.ices(taf.data.path("sam_data/cw.dat"))
-wdiscards <- read.ices(taf.data.path("sam_data/cn.dat"))
+wdiscards <- read.ices(taf.data.path("sam_data/dw.dat"))
 wlandings <- read.ices(taf.data.path("sam_data/lw.dat"))
 
 #  ## Natural-mortality ##

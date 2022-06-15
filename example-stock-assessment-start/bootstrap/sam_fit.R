@@ -5,4 +5,4 @@ library(stockassessment)
 fit <- fitfromweb("WBCod_2021_cand01")
 
 # save to model folder
-save(fit, file = "fit.rData")
+save(fit, file = "fit.RData")
