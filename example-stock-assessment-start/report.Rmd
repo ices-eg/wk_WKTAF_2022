@@ -1,0 +1,12 @@
+---
+output:
+  html_document: default
+bibliography: bootstrap/DATA.bib
+nocite: '@*'
+---
+
+Hello
+
+```{r}
+plot(1:10, 1:10)
+```
