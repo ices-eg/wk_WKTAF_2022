@@ -32,10 +32,17 @@ wstock <- read.ices(taf.data.path("sam_data/sw.dat"))
 # Landing fraction in catch at age
 landfrac <- read.ices(taf.data.path("sam_data/lf.dat"))
 
-
-
+# landings
+latage <- catage * landfrac[,-1]
+datage <- catage * (1 - landfrac[, -1])
 
 ## 2 Preprocess data
 
 ## 3 Write TAF tables to data directory
-write.taf(catage, dir = "data")
+write.taf(
+  c(
+    "catage", "latage", "datage", "wstock", "wcatch",
+    "wdiscards", "wlandings", "natmort", "propf", "propm",
+    "landfrac"),
+  dir = "data"
+)

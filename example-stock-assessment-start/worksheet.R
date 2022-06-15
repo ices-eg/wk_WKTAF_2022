@@ -13,7 +13,8 @@ library(icesTAF)
 draft.software("stockassessment")
 draft.software("stockassessment", file = TRUE)
 
-taf.bootstrap(software = TRUE)
+# skip software altogether
+taf.bootstrap(software = FALSE)
 
 library(stockassessment)
 library(rmarkdown)
