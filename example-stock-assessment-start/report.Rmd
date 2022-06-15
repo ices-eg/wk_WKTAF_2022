@@ -42,10 +42,11 @@ tab_env$OBJECTS$number[[1]] <- list(9, 6, 1)
 fig_env$OBJECTS$number[[1]] <- list(9, 6, 1)
 
 # set table captions in the order they appear in the report to get the numbering correct
-table_nums("catch_table", "Total catch (tonnes) for the first and second half of the year as estimated by ICES")
+table_nums("catch_table", "Estimated catch at age.")
 
 # set figure captions in the order they appear in the report to get the numbering correct
-figure_nums("catch_plot", "Total catch (tonnes) by year as estimated by ICES.")
+figure_nums("fbar_plot", "Plot of F bar (3-5) from the final assessment run.")
+figure_nums("retro_plot", "Retrospective of SSB, F and Recruitment (age 0).")
 ```
 
 
@@ -71,7 +72,7 @@ pander(style_table1(catch_table), missing = "-")
 
 ```{r catch_plot, fig.cap = cap_in}
 # Figure Caption
-cap_in <- figure_nums("catch_plot")
+cap_in <- figure_nums("fbar_plot")
 
 # Output figure
 include_graphics("report/Fbar.png")
@@ -84,6 +85,14 @@ mohns <- read.taf("output/mohns_rho.csv")
 ```
 
 The mohns rho value for F is `r round(mohns[1,"Fbar(3-5)"], 3)`.
+
+```{r retro_plot, fig.cap = cap_in}
+# Figure Caption
+cap_in <- figure_nums("retro_plot")
+
+# Output figure
+include_graphics("report/retrospective.png")
+```
 
 
 # References
