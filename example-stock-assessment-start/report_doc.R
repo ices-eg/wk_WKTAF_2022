@@ -1,6 +1,6 @@
 library(rmarkdown)
 
-#source("utilities.R")
+source("utilities.R")
 
 mkdir("report")
 
