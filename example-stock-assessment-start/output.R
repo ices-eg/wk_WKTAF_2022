@@ -42,6 +42,7 @@ colnames(tsb) <- c("TSB", "Low", "High")
 # Summary Table
 tab.summary <- cbind(as.data.frame(summary(fit)), tsb)
 tab.summary <- cbind(tab.summary, rbind(catab, NA))
+# should probably make Low and High column names unique R_Low etc.
 
 mohns_rho <- mohn(retro_fit)
 mohns_rho <- as.data.frame(t(mohns_rho))

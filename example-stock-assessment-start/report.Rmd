@@ -56,7 +56,6 @@ figure_nums("catch_plot", "Total catch (tonnes) by year as estimated by ICES.")
 
 ### Catch data
 
-
 ```{r catch_table}
 catch_table <- read.taf("report/catage.csv")
 
@@ -68,6 +67,8 @@ pander(style_table1(catch_table), missing = "-")
 ```
 
 
+### F at age estimate
+
 ```{r catch_plot, fig.cap = cap_in}
 # Figure Caption
 cap_in <- figure_nums("catch_plot")
@@ -75,6 +76,15 @@ cap_in <- figure_nums("catch_plot")
 # Output figure
 include_graphics("report/Fbar.png")
 ```
+
+### Retrospective
+
+```{r mohns}
+mohns <- read.taf("output/mohns_rho.csv")
+```
+
+The mohns rho value for F is `r round(mohns[1,"Fbar(3-5)"], 3)`.
+
 
 # References
 
