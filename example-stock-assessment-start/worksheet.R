@@ -16,6 +16,7 @@ draft.software("stockassessment", file = TRUE)
 draft.data(
   data.scripts = c("sam_data.R", "sam_fit.R"),
   data.files = NULL,
+  title = c("Data from stockassessment.org", "Fitted object from stockassessment.org"),
   originator = "WGBFAS",
   year = 2021,
   file = TRUE
