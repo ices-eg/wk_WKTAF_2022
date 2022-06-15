@@ -6,14 +6,9 @@ mkdir("report")
 
 # combine into a word document
 render("report.Rmd",
-  output_file = "report.html",
-#  output_file = "report.docx",
-  encoding = "UTF-8"
-)
-
-render("report.Rmd",
-  output_file = "report.docx",
+  output_format = c("word_document", "html_document"),
   encoding = "UTF-8"
 )
 
 cp("report.html", "report", move = TRUE)
+cp("report.docx", "report", move = TRUE)
