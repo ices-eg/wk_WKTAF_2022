@@ -5,20 +5,23 @@ library(stockassessment)
 mkdir("report")
 
 load("model/fit.rData")
+load("model/retro_fit.rData")
 
-## Report Plots ##
-# taf.png("summary")
-# plot(SSB~Year, x, type="l", lwd=2, ylim=lim(x$SSB), yaxs="i",
-# 	ylab="SSB (1000 t)", main="Biomass")
-# plot(fit,partial=F)
-# dev.off()
+## input data plots
+
+## ....
+
+## model output plots ##
+taf.png("summary", width = 1600, height = 2000)
+plot(fit)
+dev.off()
 
 taf.png("SSB")
-ssbplot(fit, addCI = T)
+ssbplot(fit, addCI = TRUE)
 dev.off()
 
 taf.png("Fbar")
-fbarplot(fit, xlab = "", partial = F)
+fbarplot(fit, xlab = "", partial = FALSE)
 dev.off()
 
 taf.png("Rec")
@@ -27,4 +30,8 @@ dev.off()
 
 taf.png("Landings")
 catchplot(fit, xlab = "")
+dev.off()
+
+taf.png("retrospective", width = 1600, height = 2000)
+plot(retro_fit)
 dev.off()
