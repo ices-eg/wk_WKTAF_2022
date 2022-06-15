@@ -42,11 +42,12 @@ colnames(tsb) <- c("TSB", "Low", "High")
 # Summary Table
 tab.summary <- cbind(as.data.frame(summary(fit)), tsb)
 tab.summary <- cbind(tab.summary, rbind(catab, NA))
-colnames(tab.summary)[1] <- "R_a0"
-colnames(tab.summary)[7] <- "Fbar_a3_5"
+
+mohns_rho <- mohn(retro_fit)
+mohns_rho <- as.data.frame(t(mohns_rho))
 
 ## Write tables to output directory
 write.taf(
-  c("partab", "tab.summary", "natage", "fatage"),
+  c("partab", "tab.summary", "natage", "fatage", "mohns_rho"),
   dir = "output"
 )
