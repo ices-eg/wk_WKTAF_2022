@@ -10,6 +10,10 @@ render("report.Rmd",
 #  output_file = "report.docx",
   encoding = "UTF-8"
 )
-# cp("report.docx", "report", move = TRUE)
 
-browseURL("report.html")
+render("report.Rmd",
+  output_file = "report.docx",
+  encoding = "UTF-8"
+)
+
+cp("report.html", "report", move = TRUE)
