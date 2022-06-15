@@ -13,6 +13,15 @@ library(icesTAF)
 draft.software("stockassessment")
 draft.software("stockassessment", file = TRUE)
 
+draft.data(
+  data.scripts = c("sam_data.R", "sam_fit.R"),
+  data.files = NULL,
+  originator = "WGBFAS",
+  year = 2021,
+  file = TRUE
+)
+
+
 # skip software altogether
 taf.bootstrap(software = FALSE)
 
